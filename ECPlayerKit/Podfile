@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+
+workspace 'ECPlayerKit'
+project '../ECCoreKit/ECCoreKit.xcodeproj'
+project 'ECPlayerKit.xcodeproj'
+
+
+def import_coreKit
+  pod 'ECCoreKit', :path => "../ECCoreKit"
+end
+
+target 'ECPlayerKit' do
+  use_frameworks!
+  import_coreKit
+
+  # Pods for ECPlayerKit
+  pod 'MBProgressHUD', '1.0.0'
+
+end
